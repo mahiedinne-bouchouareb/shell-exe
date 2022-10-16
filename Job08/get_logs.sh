@@ -1,4 +1,5 @@
-#./bin/bash
+#!/bin/bash
 
-d=date '+%d-%m-%y-%H:%M' log=number_connection-$d mkdir -p/home/mahiedinne/Documents/Script/Job08/Backup grep -a mahiedinne /var/log/aut.log | wc -I |gzip > /home/mahiedinne/Documents/Script/Job08/Backup/backup-$log.gz
-
+d=nombre_ connexions_$(date +%d-%m-%Y-'%H:%M')
+cat /var/log/auth.log | grep $USER | wc -l > $d
+tar -cvf ./$d.tar ./ && mv $d.tar Backup
